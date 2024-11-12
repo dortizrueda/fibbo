@@ -1,5 +1,6 @@
 import argparse
 
+from functools import cache
 
 def fibbo(n: int) -> int:
     """
@@ -26,6 +27,14 @@ def fibbo(n: int) -> int:
 ##  return n
 ##if n in cache:
 ##  return cache[n]
+
+@cache
+def fibonacci_recursive_memoization(n:int)->int:
+    if n<0:
+        raise ValueError("n must be greater than or equal to zero.")
+    if n<2:
+        return n
+    return fibonacci_recursive_memoization(n-1) + fibonacci_recursive_memoization(n-2)
 
 
 if __name__ == "__main__":
