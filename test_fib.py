@@ -10,3 +10,4 @@ def test_fib_9_is_34():
 def test_fib_negative_raise_error():
     with pytest.raises(ValueError):
         fibbo(-1)
+
